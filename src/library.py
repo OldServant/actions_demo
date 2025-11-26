@@ -7,31 +7,38 @@ class Book:
 
     def get_title(self):
         return self.__title
+        
     def get_author(self):
         return self.__author
+        
     def get_year(self):
         return self.__year
+        
     def is_available(self):
         return self.__available
-
+        
     def mark_as_taken(self):
         self.__available = False
+        
     def mark_as_returned(self):
         self.__available = True
 
     def __str__(self):
         return f"Книга: '{self.__title}', автор: {self.__author}, год: {self.__year}, статус: {self.__available}"
 
+
 class PrintedBook(Book):
     def __init__(self, title, author, year, pages, condition):
         super().__init__(title, author, year)
         self.pages = pages
         self.condition = condition
+        
     def repair(self):
         if self.condition == 'плохая':
             self.condition = 'хорошая'
         else:
             self.condition = 'новая'
+
 
 class EBook(Book):
     def __init__(self, title, author, year, file_size: int, b_format):
@@ -41,6 +48,7 @@ class EBook(Book):
 
     def download(self):
         print(f'Книга {self.get_title()} загружается...')
+
 
 class User:
     def __init__(self, name):
@@ -64,15 +72,20 @@ class User:
     def get_borrowed_books(self):
         return tuple(self.__borrowed_book)
 
+
 class Librarian(User):
     def __init__(self, name):
         super().__init__(name)
+        
     def add_book(self, library, book):
         library.add_book(book)
+        
     def remove_book(self, library, title):
         library.remove_book(title)
+        
     def register_user(self, library, user):
         library.add_user(user)
+
 
 class Library:
     def __init__(self):
@@ -81,23 +94,29 @@ class Library:
 
     def add_book(self, book):
         self.__books.append(book)
+        
     def remove_book(self, title):
         self.__books = [b for b in self.__books if b.get_title() == title]
+        
     def add_user(self, user):
         self.__users.append(user)
+        
     def find_book(self, title):
         for i in self.__books:
             if i.get_title() == title:
                 return i
         return None
+        
     def show_all_books(self):
         print(self.__books)
+        
     def show_available_books(self):
         poop = []
         for i in self.__books:
             if i.is_available():
                 poop.append(i)
         return poop
+        
     def lend_book(self, title, user_name):
         book1 = self.find_book(title)
         user1 = [i for i in self.__users if i.name == user_name]
