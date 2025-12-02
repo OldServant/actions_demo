@@ -24,8 +24,10 @@ class Book:
         self.__available = True
 
     def __str__(self):
-        return f"Книга: '{self.__title}', автор: {self.__author},
-        год: {self.__year}, статус: {self.__available}"
+        return (
+        f"Книга: '{self.__title}', автор: {self.__author}, "
+        f"год: {self.__year}, статус: {self.__available}"
+        )
 
 
 class PrintedBook(Book):
