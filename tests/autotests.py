@@ -1,10 +1,10 @@
 import sys
 from pathlib import Path
+import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-import unittest
 from src.library import Book, PrintedBook, EBook, User, Librarian, Library
 
 
