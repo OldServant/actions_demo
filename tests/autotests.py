@@ -38,7 +38,8 @@ class TestEBook(unittest.TestCase):
 class TestUserAndLibrary(unittest.TestCase):
     def setUp(self):
         self.lib = Library()
-        self.book = PrintedBook("Война и мир", "Толстой", 1869, 1225, "хорошая")
+        self.book = PrintedBook("Война и мир", "Толстой", 1869,
+                                1225, "хорошая")
         self.user = User("Анна")
         self.librarian = Librarian("Мария")
         self.librarian.add_book(self.lib, self.book)
