@@ -26,8 +26,7 @@ class Book:
     def __str__(self):
         return (
         f"Книга: '{self.__title}', автор: {self.__author}, " +
-        f"год: {self.__year}, статус: {self.__available}"
-                )
+        f"год: {self.__year}, статус: {self.__available}")
 
 
 
