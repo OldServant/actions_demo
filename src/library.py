@@ -25,9 +25,9 @@ class Book:
 
     def __str__(self):
         return (
-        f"Книга: '{self.__title}', автор: {self.__author}, " +
-        f"год: {self.__year}, статус: {self.__available}")
-
+            f"Книга: '{self.__title}', автор: {self.__author}, " +
+            f"год: {self.__year}, статус: {self.__available}"
+        )
 
 
 class PrintedBook(Book):
@@ -138,7 +138,7 @@ lib = Library()
 # --- создаём книги ---
 b1 = PrintedBook("Война и мир", "Толстой", 1869, 1225, "хорошая")
 b2 = EBook("Мастер и Маргарита", "Булгаков", 1966, 5, "epub")
-b3 = PrintedBook("Преступление и наказание", "Достоевский", 1866, 480, "плохая")
+b3 = PrintedBook("Преступление и наказание", "Достоей", 1866, 480, "плох")
 # --- создаём пользователей ---
 user1 = User("Анна")
 librarian = Librarian("Мария")
